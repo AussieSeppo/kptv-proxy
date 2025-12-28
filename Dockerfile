@@ -11,6 +11,15 @@ RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w -X main.Version=v10102025.
 # Final stage - keep all GPU drivers
 FROM docker.io/debian:bookworm-slim
 
+# Install BASH
+FROM ubuntu:22.04
+
+RUN apt-get update && \
+    apt-get install -y bash && \
+    rm -rf /var/lib/apt/lists/*
+
+CMD ["bash"]
+
 # Install all GPU drivers + curl in one layer
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
