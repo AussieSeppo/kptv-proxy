@@ -12,9 +12,11 @@ RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w -X main.Version=v10102025.
 FROM docker.io/debian:bookworm-slim
 
 # Install BASH
-FROM ubuntu:22.04
+FROM ubuntu:latest
 RUN apt-get update && \
     apt-get install -y bash && \
+    apt-get install -y wget && \
+    apt-get install -y nanon && \
     rm -rf /var/lib/apt/lists/*
 # Command to run when the container starts
 CMD ["bash"]
