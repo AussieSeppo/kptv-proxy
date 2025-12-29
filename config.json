@@ -1,0 +1,34 @@
+{
+  "baseURL": "http://your-server-ip:9500",
+  "bufferSizePerStream": 16,
+  "cacheEnabled": true,
+  "cacheDuration": "30m",
+  "importRefreshInterval": "12h",
+  "workerThreads": 4,
+  "debug": false,
+  "obfuscateUrls": true,
+  "sortField": "tvg-name",
+  "sortDirection": "asc",
+  "streamTimeout": "10s",
+  "maxConnectionsToApp": 100,
+  "watcherEnabled": true,
+  "ffmpegMode": false,
+  "ffmpegPreInput": [],
+  "ffmpegPreOutput": ["-c", "copy"],
+  "sources": [
+    {
+      "name": "Primary IPTV Source",
+      "url": "http://provider1.com/playlist.m3u8",
+      "order": 1,
+      "maxConnections": 5,
+      "maxStreamTimeout": "30s",
+      "retryDelay": "5s",
+      "maxRetries": 3,
+      "maxFailuresBeforeBlock": 5,
+      "minDataSize": 2,
+      "userAgent": "VLC/3.0.18 LibVLC/3.0.18",
+      "reqOrigin": "",
+      "reqReferrer": ""
+    }
+  ]
+}
