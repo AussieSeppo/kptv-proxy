@@ -298,7 +298,7 @@ func getDefaultConfig() *Config {
 		CacheDuration:         30 * time.Minute, // Default 30 min expiration
 		ImportRefreshInterval: 12 * time.Hour,   // Default: refresh imports every 12 hours
 		WorkerThreads:         8,                // Default worker threads
-		Debug:                 true,            // Debug disabled
+		Debug:                 true,            // Debug enabled
 		ObfuscateUrls:         false,            // Do not obfuscate by default
 		SortField:             "tvg-name",       // Default sort field
 		SortDirection:         "asc",            // Default ascending order
@@ -469,7 +469,7 @@ func CreateExampleConfig(path string) error {
 				MinDataSize:            1,
 				UserAgent:              "Mozilla/5.0 (Smart TV; Linux)",
 				ReqOrigin:              "https://iptv-org.github.io",
-				ReqReferrer:            "https://iptv-org.github.io/iptv/",
+				ReqReferrer:            "https://iptv-org.github.io/iptv",
 				LiveIncludeRegex:       "",
 				LiveExcludeRegex:       "",
 				SeriesIncludeRegex:     "",
@@ -524,4 +524,5 @@ func obfuscateURL(urlStr string) string {
 	}
 	return result
 }
+
 
