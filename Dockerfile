@@ -21,9 +21,9 @@ CMD ["bash"]
 
 # Install wget
 # Use an official Ubuntu as a parent image
-FROM ubuntu:latest
+#FROM ubuntu:latest
 # Update the package list and install wget
-RUN apt-get update && apt-get install -y wget
+#RUN apt-get update && apt-get install -y wget
 
 # Install all GPU drivers + curl in one layer
     RUN apt-get update && apt-get install -y --no-install-recommends \
