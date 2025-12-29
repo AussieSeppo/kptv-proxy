@@ -1,5 +1,5 @@
 {
-  "baseURL": "http://your-server-ip:9500",
+  "baseURL": "http://https://p01--kptv-proxy--4mw9zxvhkfnz.code.run",
   "bufferSizePerStream": 16,
   "cacheEnabled": true,
   "cacheDuration": "30m",
@@ -18,7 +18,9 @@
   "sources": [
     {
       "name": "Primary IPTV Source",
-      "url": "http://provider1.com/playlist.m3u8",
+      "url": "http://premiumeclipse2.xyz",
+      "username": "SimonH170724",
+      "password": "beWDwym",
       "order": 1,
       "maxConnections": 5,
       "maxStreamTimeout": "30s",
