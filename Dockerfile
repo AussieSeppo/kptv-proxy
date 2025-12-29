@@ -13,7 +13,6 @@ FROM docker.io/debian:bookworm-slim
 
 # Install BASH
 FROM ubuntu:22.04
-
 RUN apt-get update && \
     apt-get install -y bash && \
     rm -rf /var/lib/apt/lists/*
@@ -23,15 +22,8 @@ CMD ["bash"]
 # Install wget
 # Use an official Ubuntu as a parent image
 FROM ubuntu:latest
-
 # Update the package list and install wget
 RUN apt-get update && apt-get install -y wget
-
-# Set the working directory
-WORKDIR /usr/src/app
-
-# Use wget to download a file
-RUN wget https://example.com/file.zip
 
 # Install all GPU drivers + curl in one layer
     RUN apt-get update && apt-get install -y --no-install-recommends \
