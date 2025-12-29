@@ -52,8 +52,8 @@ USER kptv
 
 RUN echo "kptv ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
-HEALTHCHECK --interval=30s --timeout=5s \
-  CMD curl -f http://localhost:8080/health || exit 1
+# HEALTHCHECK --interval=30s --timeout=5s \
+# CMD curl -f http://localhost:8080/health || exit 1
 
 ENV SETTINGS_DIR=/settings
 ENV PATH="/usr/local/bin:${PATH}"
