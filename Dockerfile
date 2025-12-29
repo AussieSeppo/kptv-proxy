@@ -17,6 +17,8 @@ FROM ubuntu:22.04
 RUN apt-get update && \
     apt-get install -y bash && \
     rm -rf /var/lib/apt/lists/*
+# Command to run when the container starts
+CMD ["bash"]
 
 # Install wget
 # Use an official Ubuntu as a parent image
@@ -30,9 +32,6 @@ WORKDIR /usr/src/app
 
 # Use wget to download a file
 RUN wget https://example.com/file.zip
-
-# Command to run when the container starts
-CMD ["bash"]
 
 # Install all GPU drivers + curl in one layer
     RUN apt-get update && apt-get install -y --no-install-recommends \
