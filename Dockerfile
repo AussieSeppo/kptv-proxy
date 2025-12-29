@@ -43,6 +43,9 @@ RUN mkdir -p /dev/dri && \
     chown -R kptv:kptv /settings && \
     chmod 775 /settings
 
+WORKDIR /workspace
+USER kptv
+
 # Install BASH
 FROM ubuntu:latest
 RUN apt-get update && \
@@ -56,12 +59,10 @@ RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - \
     && apt-get clean
 RUN apt-get update && apt-get install -y nano
 
-WORKDIR /workspace
-USER kptv
-
 ENV PATH="/usr/local/bin:${PATH}"
 
 EXPOSE 8080
 
 CMD ["/usr/local/bin/kptv-proxy", "BASH"]
+
 
