@@ -19,22 +19,14 @@ RUN apt-get update && \
 # Command to run when the container starts
 CMD ["bash"]
 
+
+# Install wget
 FROM debian:11-slim
 RUN apt-get update && apt-get install -y wget gnupg g++ apt-utils curl git && apt-get clean
-
-######################
-
 RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - \
     && apt-get update && apt-get install -y nodejs \
     && apt-get clean
-
 RUN apt-get update && apt-get install -y nano
-
-# Install wget
-# Use an official Ubuntu as a parent image
-#FROM ubuntu:latest
-# Update the package list and install wget
-#RUN apt-get update && apt-get install -y wget
 
 # Install all GPU drivers + curl in one layer
     RUN apt-get update && apt-get install -y --no-install-recommends \
