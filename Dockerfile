@@ -41,11 +41,11 @@ RUN mkdir -p /dev/dri && \
     adduser --uid 1000 --gid 1000 --disabled-password --gecos "" kptv && \
     usermod -a -G video kptv && \
     usermod -a -G render kptv && \
-    chmod 755 /usr/local/bin/ffmpeg /usr/local/bin/ffprobe /usr/local/bin/kptv-proxy && \
+    chmod 777 /usr/local/bin/ffmpeg /usr/local/bin/ffprobe /usr/local/bin/kptv-proxy && \
     mkdir -p /settings && \
     chmod -R 755 /static && \
     chown -R kptv:kptv /settings && \
-    chmod 775 /settings
+    chmod 777 /settings
 
 WORKDIR /workspace
 USER kptv
@@ -61,6 +61,7 @@ ENV PATH="/usr/local/bin:${PATH}"
 EXPOSE 8080
 
 CMD ["/usr/local/bin/kptv-proxy"]
+
 
 
 
