@@ -43,7 +43,7 @@ RUN mkdir -p /dev/dri && \
     usermod -a -G render kptv && \
     chmod 777 /usr/local/bin/ffmpeg /usr/local/bin/ffprobe /usr/local/bin/kptv-proxy && \
     mkdir -p /settings && \
-    chmod -R 755 /static && \
+    chmod -R 777 /static && \
     chown -R kptv:kptv /settings && \
     chmod 777 /settings
 
@@ -61,6 +61,7 @@ ENV PATH="/usr/local/bin:${PATH}"
 EXPOSE 8080
 
 CMD ["/usr/local/bin/kptv-proxy"]
+
 
 
 
