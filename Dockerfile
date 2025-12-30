@@ -26,6 +26,7 @@ FROM docker.io/debian:bookworm-slim
     nano \
     curl \
     sudo \
+    docker-compose \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
@@ -61,6 +62,7 @@ ENV PATH="/usr/local/bin:${PATH}"
 EXPOSE 8080
 
 CMD ["/usr/local/bin/kptv-proxy"]
+
 
 
 
